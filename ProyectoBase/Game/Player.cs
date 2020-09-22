@@ -8,7 +8,7 @@ namespace Game
 {
     public class Player
     {
-        #region • Private fields/variables
+        #region • Private fields/variables (11)
         private float angle;
         private float scale;
         private float speed;

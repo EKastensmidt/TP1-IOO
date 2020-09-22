@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Gomez\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Gomez\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Juego.1528042203.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase" t="IncludeFlat">
+      <e p="Game" t="IncludeRecursive">
+        <e p="Animation.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Bullet.cs" t="Include" />
+        <e p="Enemy.cs" t="Include" />
+        <e p="Engine.dll" t="Include" />
+        <e p="Game.cs" t="Include" />
+        <e p="Game.csproj" t="IncludeRecursive" />
+        <e p="LifeController.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Player.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include" />
+        <e p="ship.png" t="Include" />
+        <e p="Vector2.cs" t="Include" />
+      </e>
+      <e p="Juego.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

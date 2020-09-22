@@ -5,14 +5,17 @@ namespace Game
 {
     public class Program
     {
+        #region • Private fields/variables
         private static float deltaTime;
         private static DateTime startTime;
         private static float lastFrameTime;
-
+        #endregion
+        
         public static float DeltaTime { get => deltaTime;}
 
         public static Player player;
         public static List<Bullet> bullets = new List<Bullet>();
+        public static List<Enemy> enemies = new List<Enemy>();
 
         static void Main(string[] args)
         {
@@ -31,10 +34,12 @@ namespace Game
             Engine.Initialize("Jueguito",800,800);
             player = new Player(new Vector2(400, 750), 0.75f, 0f, 200, 100);
         }
+        
         private static void InitAudio()
         {
 
         }
+        
         private static void Update()
         {
             UpdateTime();
@@ -51,6 +56,7 @@ namespace Game
             //    enemies[i].Update();
             //}
         }
+        
         private static void Render()
         {
             Engine.Clear();
@@ -68,6 +74,7 @@ namespace Game
             //}
             Engine.Show();
         }
+        
         private static void UpdateTime()
         {
             var currentTime = (float)(DateTime.Now - startTime).TotalSeconds;

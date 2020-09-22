@@ -8,16 +8,17 @@ namespace Game
 {
     public class Bullet
     {
-        #region • Private fields/variables
+        #region • Private fields/variables (9)
         private float angle;
         private float scale;
         private float speed;
         private float collisionRadius;
-        private Animation idleAnimation;
-        private Animation currentAnimation;
         private float lifeTime = 8f;
         private float currentLifeTime;
         private int damage;
+        
+        private Animation idleAnimation;
+        private Animation currentAnimation;
         #endregion
 
         #region • Public fields/variables

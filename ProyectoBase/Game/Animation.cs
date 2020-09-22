@@ -8,7 +8,7 @@ namespace Game
 {
     public class Animation
     {
-        #region • Private fields/variables
+        #region • Private fields/variables (6)
         private string name;
         private List<Texture> frames;
         private int currentFrameIndex = 0;
@@ -17,7 +17,7 @@ namespace Game
         private bool isLoopEnabled;
         #endregion
 
-        #region • Public fields/variables
+        #region • Public fields/variables (3)
         public int FramesCount => frames.Count;
         public int CurrentFrameIndex => currentFrameIndex;
         public Texture CurrentFrame => frames[currentFrameIndex];
