@@ -8,6 +8,7 @@ namespace Game
 {
     public class Player
     {
+        #region • Private fields/variables
         private float angle;
         private float scale;
         private float speed;
@@ -19,6 +20,8 @@ namespace Game
         private LifeController lifeController;
         private Animation idleAnimation;
         private Animation currentAnimation;
+        #endregion
+
         public Vector2 Position { get; set; } = Vector2.Zero;
 
         public Player (Vector2 position,float scale,float angle,float speed, int maxLife)
@@ -85,6 +88,7 @@ namespace Game
                 Texture frame = Engine.GetTexture($"Textures/Player/Idle/{i}.png");
                 idleTextures.Add(frame);
             }
+
             idleAnimation = new Animation(idleTextures, 0.1f, true, "Idle");
         }
     }

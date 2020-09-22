@@ -1,0 +1,8 @@
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\bin\Debug\Engine.dll
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\bin\Debug\ship.png
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\bin\Debug\Game.exe
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\bin\Debug\Game.pdb
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\obj\Debug\Game.exe
+C:\Users\Gomez\Documents\GitHub\TP1-IOO\ProyectoBase\Game\obj\Debug\Game.pdb

@@ -8,6 +8,7 @@ namespace Game
 {
     public class Bullet
     {
+        #region • Private fields/variables
         private float angle;
         private float scale;
         private float speed;
@@ -17,12 +18,15 @@ namespace Game
         private float lifeTime = 8f;
         private float currentLifeTime;
         private int damage;
+        #endregion
 
+        #region • Public fields/variables
         public float CollisionRadius => collisionRadius;
         public int Damage => damage;
         public Vector2 Position { get; set; } = Vector2.Zero;
         public float Width => currentAnimation.CurrentFrame.Width;
         public float Height => currentAnimation.CurrentFrame.Height;
+        #endregion
 
         public Bullet(Vector2 initialPosition, float scale, float angle, float speed, int damage)
         {
@@ -37,11 +41,6 @@ namespace Game
             CreateAnimations();
             currentAnimation = idleAnimation;
             collisionRadius = Height > Width ? Height / 2 : Width / 2;
-        }
-
-        public void Start()
-        {
-
         }
 
         public void Update()
@@ -79,6 +78,7 @@ namespace Game
             Engine.Draw(currentAnimation.CurrentFrame, Position.X, Position.Y, scale, scale, angle, GetOffsetX(), GetOffsetY());
         }
 
+        #region • Get Offsets (X, Y)
         private float GetOffsetX()
         {
             return (currentAnimation.CurrentFrame.Width * scale) / 2f;
@@ -88,5 +88,6 @@ namespace Game
         {
             return (currentAnimation.CurrentFrame.Height * scale) / 2f;
         }
+        #endregion
     }
 }
