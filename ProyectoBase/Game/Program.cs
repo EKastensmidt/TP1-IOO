@@ -24,7 +24,7 @@ namespace Game
                 Render();
             }
         }
-        //test
+        //test1
         private static void Initialization()
         {
             startTime = DateTime.Now;
