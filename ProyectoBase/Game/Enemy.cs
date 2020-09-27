@@ -16,12 +16,12 @@ namespace Game
         private float shootingCooldown = 0.5f;
         private bool isAlive;
         private int currentLife;
-        
+        private float enemyYPos = -200;
+
         // References
         private LifeController lifeController;
         private Animation idleAnimation;
         private Animation explosionAnimation;
-        private Animation damageAnimation;
         private Animation currentAnimation;
         #endregion
 
@@ -44,11 +44,6 @@ namespace Game
 
             CreateAnimations();
             currentAnimation = idleAnimation;
-        }
-
-        public void Attack()
-        {
-            // Ataque enemigo
         }
 
         private void CreateAnimations()
@@ -74,16 +69,6 @@ namespace Game
             
             explosionAnimation = new Animation(explosionTextures, 0.05f, false, "Explosion");
 
-            // Damage textures
-            List<Texture> damageTextures = new List<Texture>();
-            
-            for (int i = 0; i < 4; i++)
-            {
-                Texture frame = Engine.GetTexture($"Textures/Enemy/Damage/{i}.png");
-                damageTextures.Add(frame);
-            }
-            
-            damageAnimation = new Animation(damageTextures, 0.5f, false, "Idle");
         }
 
         public void Update()
@@ -102,6 +87,7 @@ namespace Game
             }
 
             currentAnimation.Update();
+
         }
 
         private void CheckCollisions(List<Bullet> bullets)
@@ -119,7 +105,6 @@ namespace Game
         {
             currentLife -= bullet.Damage;
             bullet.DestroyBullet();
-            //currentAnimation = damageAnimation;
 
             if (currentLife <= 0)
             {

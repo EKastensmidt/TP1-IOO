@@ -68,7 +68,7 @@ namespace Game
             List<Texture> idleTextures = new List<Texture>();
             for (int i = 0; i < 4; i++)
             {
-                Texture frame = Engine.GetTexture($"Textures/Bullet/Idle/{i}.png");
+                Texture frame = Engine.GetTexture($"Textures/Bullet/idle/{i}.png");
                 idleTextures.Add(frame);
             }
             idleAnimation = new Animation(idleTextures, 0.1f, true, "Idle");

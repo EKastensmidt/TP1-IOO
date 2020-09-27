@@ -67,7 +67,7 @@ namespace Game
         private void ShootBullet()
         {
             currentShootingCooldown = shootingCooldown;
-            Bullet bullet = new Bullet(Position, 0.75f, 0f, 300f, 50);
+            Bullet bullet = new Bullet(Position, 1f, 0f, 300f, 50);
         }
 
         private float GetOffsetX()
