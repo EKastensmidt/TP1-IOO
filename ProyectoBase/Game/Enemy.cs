@@ -37,7 +37,7 @@ namespace Game
 
             isAlive = true;
             currentLife = maxLife;
-            //this.lifeController = new LifeController(maxLife);
+            this.lifeController = new LifeController(maxLife);
             this.scale = scale;
             this.angle = angle;
             this.speed = speed;

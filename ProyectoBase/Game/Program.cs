@@ -27,7 +27,6 @@ namespace Game
                 Render();
             }
         }
-        //test1
         private static void Initialization()
         {
             startTime = DateTime.Now;
@@ -51,10 +50,10 @@ namespace Game
             {
                 bullets[i].Update();
             }
-            //for (int i = enemies.Count - 1; i >= 0; i--)
-            //{
-            //    enemies[i].Update();
-            //}
+            for (int i = enemies.Count - 1; i >= 0; i--)
+            {
+                enemies[i].Update();
+            }
         }
         
         private static void Render()
@@ -68,10 +67,10 @@ namespace Game
             {
                 bullets[i].Render();
             }
-            //for (int i = enemies.Count - 1; i >= 0; i--)
-            //{
-            //    enemies[i].Render();
-            //}
+            for (int i = enemies.Count - 1; i >= 0; i--)
+            {
+                enemies[i].Render();
+            }
             Engine.Show();
         }
         
