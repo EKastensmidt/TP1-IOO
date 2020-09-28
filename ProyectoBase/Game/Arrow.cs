@@ -18,9 +18,9 @@ namespace Game
             posY = y;
         }
 
-        public void Draw()
+        public void Render()
         {
-            Engine.Draw("Indicador.png", posX, posY, 0.15f, 0.15f, 0, 0, 0);
+            Engine.Draw("Textures/indicador.png", posX, posY, 0.05f, 0.05f, 0, 0, 0);
         }
     }
 }

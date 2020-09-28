@@ -12,11 +12,8 @@ namespace Game
         private float angle;
         private float scale;
         private float speed;
-        private float currentShootingCooldown;
-        private float shootingCooldown = 0.5f;
         private bool isAlive;
         private int currentLife;
-        private float enemyYPos = -200;
 
         // References
         private LifeController lifeController;
@@ -51,7 +48,7 @@ namespace Game
             // Idle textures
             List<Texture> idleTextures = new List<Texture>();
             
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Texture frame = Engine.GetTexture($"Textures/Enemy/Idle/{i}.png");
                 idleTextures.Add(frame);
@@ -75,19 +72,27 @@ namespace Game
         {
             if (isAlive)
             {
-                CheckCollisions(Program.bullets);
+                CheckCollisions(GameManager.Instance.LevelController.Bullets);
+                EnemyMovement();
+                if (position.Y > 800)
+                {
+                    GameManager.Instance.OnLoseHandler();
+                }
             }
             else
             {
                 if (currentAnimation.CurrentFrameIndex == currentAnimation.FramesCount - 1)
                 {
                     #warning CHECK ENEMIES
-                    Program.enemies.Remove(this);
+                    GameManager.Instance.LevelController.Enemies.Remove(this);
                 }
             }
-
+  
             currentAnimation.Update();
-
+        }
+        private void EnemyMovement()
+        {
+            position += new Vector2(0, speed * Program.DeltaTime);
         }
 
         private void CheckCollisions(List<Bullet> bullets)

@@ -21,7 +21,8 @@ namespace Game
         private Animation idleAnimation;
         private Animation currentAnimation;
         #endregion
-
+        public float width => currentAnimation.CurrentFrame.Width;
+        public float height => currentAnimation.CurrentFrame.Height;
         public Vector2 Position { get; set; } = Vector2.Zero;
 
         public Player (Vector2 position,float scale,float angle,float speed, int maxLife)
@@ -67,7 +68,7 @@ namespace Game
         private void ShootBullet()
         {
             currentShootingCooldown = shootingCooldown;
-            Bullet bullet = new Bullet(Position, 1f, 0f, 300f, 50);
+            Bullet bullet = new Bullet(Position, 0.75f, 0f, 500f, 50);
         }
 
         private float GetOffsetX()
@@ -83,7 +84,7 @@ namespace Game
         private void CreateAnimations()
         {
             List<Texture> idleTextures = new List<Texture>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Texture frame = Engine.GetTexture($"Textures/Player/Idle/{i}.png");
                 idleTextures.Add(frame);

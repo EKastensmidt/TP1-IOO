@@ -48,6 +48,5 @@ namespace Game
             CurrentLife += heal;
         }
         
-        // Private void Kill()
     }
 }

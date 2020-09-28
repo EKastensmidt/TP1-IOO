@@ -18,15 +18,18 @@ namespace Game
         private float timer = 0f;
         private float tiempoParaApretar = 0.25f;
 
+        public float PosY { get => posY; set => posY = value; }
+        public float PosX { get => posX; set => posX = value; }
+
         public Button(float posX, float posY, string texture, float escalaX, float escalaY)
         {
-            this.posX = posX;
-            this.posY = posY;
+            this.PosX = posX;
+            this.PosY = posY;
             this.texture = texture;
             this.escalaX = escalaX;
             this.escalaY = escalaY;
         }
-        void Buttons(Button up, Button down)
+        public void Buttons(Button up, Button down)
         {
             botonUp = up;
             botonDown = down;
@@ -35,21 +38,21 @@ namespace Game
         {
             timer += Program.DeltaTime;
 
-            if (Engine.GetKey(Keys.UP) && timer >= tiempoParaApretar)
+            if (Engine.GetKey(Keys.W) && timer >= tiempoParaApretar)
             {
                 timer = 0f;
                 return GetUp();
             }
-            else if (Engine.GetKey(Keys.DOWN) && timer >= tiempoParaApretar)
+            else if (Engine.GetKey(Keys.S) && timer >= tiempoParaApretar)
             {
                 timer = 0f;
                 return GetDown();
             }
             else return this;
         }
-        public void Draw()
+        public void Render()
         {
-            Engine.Draw(texture, posX, posY, escalaX, escalaY);
+            Engine.Draw(texture, PosX, PosY, escalaX, escalaY);
         }
 
         public Button GetUp()

@@ -38,7 +38,7 @@ namespace Game
             this.angle = angle;
             this.speed = speed;
 
-            Program.bullets.Add(this);
+            GameManager.Instance.LevelController.Bullets.Add(this);
             CreateAnimations();
             currentAnimation = idleAnimation;
             collisionRadius = Height > Width ? Height / 2 : Width / 2;
@@ -60,13 +60,13 @@ namespace Game
 
         public void DestroyBullet()
         {
-            Program.bullets.Remove(this);
+            GameManager.Instance.LevelController.Bullets.Remove(this);
         }
 
         private void CreateAnimations()
         {
             List<Texture> idleTextures = new List<Texture>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Texture frame = Engine.GetTexture($"Textures/Bullet/idle/{i}.png");
                 idleTextures.Add(frame);
