@@ -8,7 +8,6 @@ namespace Game
 {
     public class MainMenu
     {
-        public const string TEXTURE = "Textures/Screens/MainMenu.png";
         private Arrow arrow;
         private Button newGame;
         private Button credits;
