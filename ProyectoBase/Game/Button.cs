@@ -11,16 +11,16 @@ namespace Game
         #region • Private fields/variables (9)
         private float posX;
         private float posY;
-        private float escalaX;
-        private float escalaY;
-        private Button botonUp;
-        private Button botonDown;
+        private float scaleX;
+        private float scaleY;
+        private Button buttonUp;
+        private Button buttonDown;
         private string texture;
         private float timer = 0f;
-        private float tiempoParaApretar = 0.25f;
+        private float timeToPress = 0.25f;
         #endregion
 
-        #region • Public fields/variables (2)
+            #region • Public fields/variables (2)
         public float PosY { get => posY; set => posY = value; }
         public float PosX { get => posX; set => posX = value; }
         #endregion
@@ -30,26 +30,26 @@ namespace Game
             this.PosX = posX;
             this.PosY = posY;
             this.texture = texture;
-            this.escalaX = escalaX;
-            this.escalaY = escalaY;
+            this.scaleX = escalaX;
+            this.scaleY = escalaY;
         }
 
         public void Buttons(Button up, Button down)
         {
-            botonUp = up;
-            botonDown = down;
+            buttonUp = up;
+            buttonDown = down;
         }
 
         public Button Update()
         {
             timer += Program.DeltaTime;
 
-            if (Engine.GetKey(Keys.W) && timer >= tiempoParaApretar)
+            if (Engine.GetKey(Keys.W) && timer >= timeToPress)
             {
                 timer = 0f;
                 return GetUp();
             }
-            else if (Engine.GetKey(Keys.S) && timer >= tiempoParaApretar)
+            else if (Engine.GetKey(Keys.S) && timer >= timeToPress)
             {
                 timer = 0f;
                 return GetDown();
@@ -59,23 +59,23 @@ namespace Game
 
         public void Render()
         {
-            Engine.Draw(texture, PosX, PosY, escalaX, escalaY);
+            Engine.Draw(texture, PosX, PosY, scaleX, scaleY);
         }
 
         public Button GetUp()
         {
-            if (botonUp != null)
+            if (buttonUp != null)
             {
-                return botonUp;
+                return buttonUp;
             }
             else return this;
         }
 
         public Button GetDown()
         {
-            if (botonDown != null)
+            if (buttonDown != null)
             {
-                return botonDown;
+                return buttonDown;
             }
             else return this;
         }
