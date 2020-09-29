@@ -27,11 +27,11 @@ namespace Game
             Initialization();
             PlayBackgroundAnimation();
             currentAnimation = backgroundAnimation;
+
         }
         public void Initialization()
         {
             Player = new Player(new Vector2(400, 750), 1f, 0f, 300, 100);
-
         }
         public void Update()
         {
@@ -90,7 +90,6 @@ namespace Game
                 ind++;
             }
         }
-
         public void PlayBackgroundAnimation()
         {
             // Idle textures
@@ -102,7 +101,8 @@ namespace Game
                 backgroundTexture.Add(frame);
             }
 
-            backgroundAnimation = new Animation(backgroundTexture, 0.05f, true, "Idle");
+            backgroundAnimation = new Animation(backgroundTexture, 0.04f, true, "Idle");
         }
+      
     }
 }

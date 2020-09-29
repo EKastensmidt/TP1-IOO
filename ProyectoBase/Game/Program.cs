@@ -27,6 +27,7 @@ namespace Game
         {
             startTime = DateTime.Now;
             Engine.Initialize("Jueguito",800,800);
+
             GameManager.Instance.Initialization();
         }
         
@@ -47,5 +48,6 @@ namespace Game
             deltaTime = currentTime - lastFrameTime;
             lastFrameTime = currentTime;
         }
+       
     }
 }

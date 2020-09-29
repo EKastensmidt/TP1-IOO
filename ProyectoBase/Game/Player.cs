@@ -51,7 +51,7 @@ namespace Game
             if (isShootingKeyPressed && currentShootingCooldown <= 0)
             {
                 ShootBullet();
-                PlayAudio();
+                PlayShootSound();
             }
             currentAnimation.Update();
         }
@@ -95,9 +95,10 @@ namespace Game
             idleAnimation = new Animation(idleTextures, 0.1f, true, "Idle");
         }
 
-        private static void PlayAudio()
+        private static void PlayShootSound()
         {
             SoundPlayer shootSound = new SoundPlayer("Audio/ShootSound.wav");
+            shootSound.Play();
         }
     }
 }
