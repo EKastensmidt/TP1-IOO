@@ -16,12 +16,12 @@ namespace Game
     }
     public class GameManager
     {
+        public MainMenu MainMenu { get; private set; }
+        public Credits Credits { get; private set; }
         public LevelController LevelController { get; private set; }
         public WinScreen WinScreen { get; private set; }
         public LoseScreen LoseScreen { get; private set; }
-        public MainMenu MainMenu { get; private set; }
-        public Credits Credits { get; private set; }
-
+      
         private static GameManager instance;
 
         public static GameManager Instance
