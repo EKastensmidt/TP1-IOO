@@ -10,7 +10,7 @@ namespace Game
     {
         private float posX;
         private float posY;
-        private float offset = 30f;
+        private float offset = 120f;
 
         public void Update(float x, float y)
         {
@@ -20,7 +20,7 @@ namespace Game
 
         public void Render()
         {
-            Engine.Draw("Textures/indicador.png", posX, posY, 0.05f, 0.05f, 0, 0, 0);
+            Engine.Draw("Textures/indicador.png", posX, posY, 1f, 1f, 0, 0, 0);
         }
     }
 }

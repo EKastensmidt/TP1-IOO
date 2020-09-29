@@ -48,7 +48,7 @@ namespace Game
             // Idle textures
             List<Texture> idleTextures = new List<Texture>();
             
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Texture frame = Engine.GetTexture($"Textures/Enemy/Idle/{i}.png");
                 idleTextures.Add(frame);
@@ -58,7 +58,7 @@ namespace Game
 
             // Explosion textures
             List<Texture> explosionTextures = new List<Texture>();
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
                 Texture frame = Engine.GetTexture($"Textures/Enemy/Explosion/{i}.png");
                 explosionTextures.Add(frame);

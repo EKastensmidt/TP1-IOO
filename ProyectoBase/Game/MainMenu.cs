@@ -16,11 +16,11 @@ namespace Game
         private List<Button> buttons = new List<Button>();
         public MainMenu()
         {
-            newGame = new Button(50f, 200f, "Textures/Buttons/start.png", 0.3f, 0.3f);
+            newGame = new Button(250f, 300f, "Textures/Buttons/start.png", 1f, 1f);
             buttons.Add(newGame);
-            credits = new Button(50f, 350f, "Textures/Buttons/credits.png", 0.3f, 0.3f);
+            credits = new Button(225f, 450f, "Textures/Buttons/credits.png", 1f, 1f);
             buttons.Add(credits);
-            quit = new Button(50f, 500f, "Textures/Buttons/quit.png", 0.3f, 0.3f);
+            quit = new Button(250f, 600f, "Textures/Buttons/quit.png", 1f, 1f);
             buttons.Add(quit);
 
             newGame.Buttons(null, credits);
@@ -43,6 +43,7 @@ namespace Game
         public void Render()
         {
             Engine.Draw("Textures/Background.png");
+            Engine.Draw("Textures/Title.png", 75, 50, 1f, 1f);
 
             foreach (var button in buttons)
             {

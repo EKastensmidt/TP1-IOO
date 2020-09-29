@@ -8,6 +8,8 @@ namespace Game
 {
     public class LevelController
     {
+        private Animation backgroundAnimation;
+        private Animation currentAnimation;
         private static float elapsedTime = 0.0f;
         private static float enemySpawnRate = 1.5f;
         private static int ind = 0;
@@ -16,12 +18,15 @@ namespace Game
         public  List<Bullet> Bullets { get; private set; } = new List<Bullet>();
         public  List<Enemy> Enemies { get; set; } = new List<Enemy>();
 
-        
-        
+        public float width => currentAnimation.CurrentFrame.Width;
+        public float height => currentAnimation.CurrentFrame.Height;
+
+
         public LevelController()
         {
             Initialization();
-             
+            PlayBackgroundAnimation();
+            currentAnimation = backgroundAnimation;
         }
         public void Initialization()
         {
@@ -49,10 +54,12 @@ namespace Game
             {
                 GameManager.Instance.OnWinHandler();
             }
+
+            currentAnimation.Update();
         }
         public void Render()
         {
-            Engine.Draw("Textures/Background.png");
+            Engine.Draw(currentAnimation.CurrentFrame);
 
             if (Player != null)
             {
@@ -77,12 +84,25 @@ namespace Game
             if (ind < 30 && elapsedTime > enemySpawnRate)
             {
                 elapsedTime = 0;
-                Enemy enemy = new Enemy(new Vector2(x, y), 0.75f, 180f, 175f, 100);
+                Enemy enemy = new Enemy(new Vector2(x, y), 1f, 0f, 175f, 100);
                 Enemies.Add(enemy);
                 Engine.Debug(ind);
                 ind++;
             }
         }
-        
+
+        public void PlayBackgroundAnimation()
+        {
+            // Idle textures
+            List<Texture> backgroundTexture = new List<Texture>();
+
+            for (int i = 0; i < 52; i++)
+            {
+                Texture frame = Engine.GetTexture($"Textures/Background/{i}.png");
+                backgroundTexture.Add(frame);
+            }
+
+            backgroundAnimation = new Animation(backgroundTexture, 0.05f, true, "Idle");
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,6 +51,7 @@ namespace Game
             if (isShootingKeyPressed && currentShootingCooldown <= 0)
             {
                 ShootBullet();
+                PlayAudio();
             }
             currentAnimation.Update();
         }
@@ -84,13 +86,18 @@ namespace Game
         private void CreateAnimations()
         {
             List<Texture> idleTextures = new List<Texture>();
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Texture frame = Engine.GetTexture($"Textures/Player/Idle/{i}.png");
                 idleTextures.Add(frame);
             }
 
             idleAnimation = new Animation(idleTextures, 0.1f, true, "Idle");
+        }
+
+        private static void PlayAudio()
+        {
+            SoundPlayer shootSound = new SoundPlayer("Audio/ShootSound.wav");
         }
     }
 }

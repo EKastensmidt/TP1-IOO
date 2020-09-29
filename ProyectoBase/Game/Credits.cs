@@ -23,7 +23,9 @@ namespace Game
         public void Render()
         {
             Engine.Draw("Textures/Background.png");
-            Engine.Draw(TEXTURE, 0, 0);
+            Engine.Draw(TEXTURE, 75, 100);
+
+            Engine.Draw("Textures/Escape.png", 50, 700, 0.5f, 0.5f);
         }
     }
 }
