@@ -37,6 +37,7 @@ namespace Game
             CreateAnimations();
             currentAnimation = idleAnimation;
         }
+
         public void Update()
         {
             currentShootingCooldown -= Program.DeltaTime;
@@ -55,6 +56,7 @@ namespace Game
             }
             currentAnimation.Update();
         }
+
         public void Render()
         {
             Engine.Draw(currentAnimation.CurrentFrame, Position.X, Position.Y, scale, scale, angle, GetOffsetX(), GetOffsetY());

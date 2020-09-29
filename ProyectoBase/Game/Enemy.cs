@@ -39,11 +39,11 @@ namespace Game
             this.angle = angle;
             this.speed = speed;
 
-            CreateAnimations();
+            PlayEnemyAnimations();
             currentAnimation = idleAnimation;
         }
 
-        private void CreateAnimations()
+        private void PlayEnemyAnimations()
         {
             // Idle textures
             List<Texture> idleTextures = new List<Texture>();
@@ -90,6 +90,7 @@ namespace Game
   
             currentAnimation.Update();
         }
+
         private void EnemyMovement()
         {
             position += new Vector2(0, speed * Program.DeltaTime);

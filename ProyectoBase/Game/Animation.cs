@@ -12,8 +12,8 @@ namespace Game
         private string name;
         private List<Texture> frames;
         private int currentFrameIndex = 0;
-        private float speed = 0.5f;
         private float currentAnimationTime;
+        private float speed = 0.5f;
         private bool isLoopEnabled;
         #endregion
 
@@ -29,6 +29,7 @@ namespace Game
             {
                 this.frames = frames;
             }
+
             this.name = name;
             this.speed = speed;
             this.isLoopEnabled = isLoopEnabled;

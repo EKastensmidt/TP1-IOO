@@ -46,7 +46,6 @@ namespace Game
         public void GetHeal(int heal)
         {
             CurrentLife += heal;
-        }
-        
+        }  
     }
 }

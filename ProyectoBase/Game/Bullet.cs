@@ -21,7 +21,7 @@ namespace Game
         private Animation currentAnimation;
         #endregion
 
-        #region • Public fields/variables
+        #region • Public fields/variables (5)
         public float CollisionRadius => collisionRadius;
         public int Damage => damage;
         public Vector2 Position { get; set; } = Vector2.Zero;
@@ -39,7 +39,7 @@ namespace Game
             this.speed = speed;
 
             GameManager.Instance.LevelController.Bullets.Add(this);
-            CreateAnimations();
+            PlayBulletAnimation();
             currentAnimation = idleAnimation;
             collisionRadius = Height > Width ? Height / 2 : Width / 2;
         }
@@ -63,7 +63,7 @@ namespace Game
             GameManager.Instance.LevelController.Bullets.Remove(this);
         }
 
-        private void CreateAnimations()
+        private void PlayBulletAnimation()
         {
             List<Texture> idleTextures = new List<Texture>();
             for (int i = 0; i < 1; i++)

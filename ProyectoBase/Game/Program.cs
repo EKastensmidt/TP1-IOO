@@ -23,6 +23,7 @@ namespace Game
                 Render();
             }
         }
+
         private static void Initialization()
         {
             startTime = DateTime.Now;
@@ -35,6 +36,7 @@ namespace Game
         {
             GameManager.Instance.Update();
         }
+
         private static void Render()
         {
             Engine.Clear();
@@ -42,12 +44,12 @@ namespace Game
             
             Engine.Show();
         }      
+
         private static void UpdateTime()
         {
             var currentTime = (float)(DateTime.Now - startTime).TotalSeconds;
             deltaTime = currentTime - lastFrameTime;
             lastFrameTime = currentTime;
         }
-       
     }
 }

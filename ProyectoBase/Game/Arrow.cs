@@ -8,9 +8,11 @@ namespace Game
 {
     public class Arrow
     {
+        #region • Public fields/variables (3)
         private float posX;
         private float posY;
         private float offset = 120f;
+        #endregion
 
         public void Update(float x, float y)
         {
@@ -20,7 +22,7 @@ namespace Game
 
         public void Render()
         {
-            Engine.Draw("Textures/indicador.png", posX, posY, 1f, 1f, 0, 0, 0);
+            Engine.Draw("Textures/Buttons/ArrowIndicator.png", posX, posY, 1f, 1f, 0, 0, 0);
         }
     }
 }

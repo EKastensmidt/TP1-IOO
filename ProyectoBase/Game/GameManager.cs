@@ -35,7 +35,9 @@ namespace Game
                 return instance;
             }
         }
+
         public GameState CurrentState { get; private set; }
+
         public void Initialization()
         {
             LevelController = new LevelController();
@@ -47,6 +49,7 @@ namespace Game
             WinScreen.OnWin += OnWinHandler;
             LoseScreen.OnLose += OnLoseHandler;
         }
+
         public void Update()
         {
             switch (CurrentState)
@@ -70,6 +73,7 @@ namespace Game
                     break;
             }      
         }
+
         public void Render()
         {
             switch (CurrentState)
@@ -93,14 +97,17 @@ namespace Game
                     break;
             }
         }
+
         public void ChangeGameState(GameState gameState)
         {
             CurrentState = gameState;
         }
+
         public void OnWinHandler()
         {
             GameManager.Instance.ChangeGameState(GameState.WinScreen);
         }
+
         public void OnLoseHandler()
         {
             GameManager.Instance.ChangeGameState(GameState.LoseScreen);

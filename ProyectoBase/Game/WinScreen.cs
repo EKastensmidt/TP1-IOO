@@ -7,14 +7,20 @@ using System.Threading.Tasks;
 namespace Game
 {
     public delegate void WinCondition();
+
     public class WinScreen
     {
-        public const string TEXTURE = "Textures/Screens/youWin.png";
+        public const string backgroundTexture = "Textures/Background.png";
+        public const string winTexture = "Textures/Screens/youWin.png";
+        public const string escapeTexture = "Textures/Escape.png";
+
         public WinCondition OnWin;
+
         public WinScreen()
         {
 
         }
+
         public void Update()
         {
             if (Engine.GetKey(Keys.ESCAPE))
@@ -22,11 +28,12 @@ namespace Game
                 GameManager.Instance.ChangeGameState(GameState.MainMenu);
             }
         }
+
         public void Render()
         {
-            Engine.Draw("Textures/Background.png");
-            Engine.Draw("Textures/Escape.png", 50, 700, 0.5f, 0.5f);
-            Engine.Draw(TEXTURE, 150, 250);
+            Engine.Draw(backgroundTexture);
+            Engine.Draw(escapeTexture, 50, 700, 0.5f, 0.5f);
+            Engine.Draw(winTexture, 150, 250);
         }
     }
 }

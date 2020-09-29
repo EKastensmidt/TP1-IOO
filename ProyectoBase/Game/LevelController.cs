@@ -8,19 +8,22 @@ namespace Game
 {
     public class LevelController
     {
+        #region • Private fields and variables (5)
         private Animation backgroundAnimation;
         private Animation currentAnimation;
         private static float elapsedTime = 0.0f;
         private static float enemySpawnRate = 1.5f;
         private static int ind = 0;
+        #endregion
 
-        public  Player Player { get; private set; }
+        #region • Public fields and variables (3)
+        public Player Player { get; private set; }
         public  List<Bullet> Bullets { get; private set; } = new List<Bullet>();
         public  List<Enemy> Enemies { get; set; } = new List<Enemy>();
 
         public float width => currentAnimation.CurrentFrame.Width;
         public float height => currentAnimation.CurrentFrame.Height;
-
+        #endregion
 
         public LevelController()
         {
@@ -29,10 +32,12 @@ namespace Game
             currentAnimation = backgroundAnimation;
 
         }
+         
         public void Initialization()
         {
             Player = new Player(new Vector2(400, 750), 1f, 0f, 300, 100);
         }
+
         public void Update()
         {
             Player.InputDetection();
@@ -57,6 +62,7 @@ namespace Game
 
             currentAnimation.Update();
         }
+
         public void Render()
         {
             Engine.Draw(currentAnimation.CurrentFrame);
@@ -74,6 +80,7 @@ namespace Game
                 Enemies[i].Render();
             }
         }
+
         private void EnemySpawner()
         {
             Random _random = new Random();
@@ -90,6 +97,7 @@ namespace Game
                 ind++;
             }
         }
+
         public void PlayBackgroundAnimation()
         {
             // Idle textures
@@ -103,6 +111,5 @@ namespace Game
 
             backgroundAnimation = new Animation(backgroundTexture, 0.04f, true, "Idle");
         }
-      
     }
 }
